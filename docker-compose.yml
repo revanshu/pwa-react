@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/app
+      - /home/app/node_modules
+    ports:
+      - '3001:3001'
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+
